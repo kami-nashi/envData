@@ -1,11 +1,8 @@
-# importing requests and json
-import requests, json
-# base URL
-#BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
-# City Name CITY = "Hyderabad"
+import requests
+import json
+
 # API key API_KEY = "Your API Key"
-# upadting the URL
-#URL = BASE_URL + "q=" + CITY + "&appid=" + API_KEY
+
 URL = 'https://api.openweathermap.org/data/2.5/weather?q=fayetteville,us&APPID=' + API_KEY + '&units=imperial'
 # HTTP request
 response = requests.get(URL)
@@ -25,8 +22,6 @@ if response.status_code == 200:
    report = data['weather']
    print(f"Temperature: {temperature}")
    print(f"Humidity: {humidity}")
-   print(f"Pressure: {pressure}")
-   #print(f"Weather Report: {report[0]['description']}")
 else:
    # showing the error message
    print("Error in the HTTP request")
